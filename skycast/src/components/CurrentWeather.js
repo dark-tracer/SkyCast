@@ -1,6 +1,6 @@
 // src/components/CurrentWeather.js
 import React, { useState, useEffect } from 'react';
-import fetchWeatherData from '../api/weatherAPI';
+import { fetchWeatherData } from '../api/weatherAPI';
 
 const CurrentWeather = () => {
   const [weatherData, setWeatherData] = useState(null);

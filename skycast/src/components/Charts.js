@@ -1,23 +1,20 @@
-// src/components/Charts.js
+// Charts.js
 import React, { useState, useEffect } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
-import fetchWeatherData from '../api/weatherAPI';
+import { fetchChartData } from '../api/weatherAPI';
 
-const Charts = () => {
+const Charts = ({ city }) => {
   const [chartData, setChartData] = useState(null);
-  const [city, setCity] = useState('London'); // default city
 
   useEffect(() => {
-    const fetchChartData = async () => {
-      const data = await fetchWeatherData(city, 'forecast');
-      const chartData = data.list.map((day) => ({
-        date: day.dt_txt,
-        temperature: day.main.temp,
-        precipitation: day.pop,
-      }));
-      setChartData(chartData);
+    const fetchChart = async () => {
+      try {
+        const data = await fetchChartData(city);
+        setChartData(data);
+      } catch (error) {
+        console.error(error);
+      }
     };
-    fetchChartData();
+    fetchChart();
   }, [city]);
 
   if (!chartData) {
@@ -26,15 +23,14 @@ const Charts = () => {
 
   return (
     <div>
-      <h2>Temperature and Precipitation Trends for {city}</h2>
-      <LineChart width={500} height={300} data={chartData}>
-        <Line type="monotone" dataKey="temperature" stroke="#8884d8" />
-        <Line type="monotone" dataKey="precipitation" stroke="#82ca9d" />
-        <XAxis dataKey="date" />
-        <YAxis />
-        <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-        <Tooltip />
-      </LineChart>
+      <h2>Charts for {city}</h2>
+      {chartData.list.map((chart, index) => (
+        <div key={index}>
+          <p>Date: {chart.dt_txt}</p>
+          <p>Temperature: {chart.main.temp}°C</p>
+          <p>Humidity: {chart.main.humidity}%</p>
+        </div>
+      ))}
     </div>
   );
 };

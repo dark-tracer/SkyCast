@@ -1,15 +1,18 @@
-// src/components/Forecast.js
+// Forecast.js
 import React, { useState, useEffect } from 'react';
-import fetchWeatherData from '../api/weatherAPI';
+import { fetchForecastData } from '../api/weatherAPI';
 
-const Forecast = () => {
+const Forecast = ({ city }) => {
   const [forecastData, setForecastData] = useState(null);
-  const [city, setCity] = useState('London'); // default city
 
   useEffect(() => {
     const fetchForecast = async () => {
-      const data = await fetchWeatherData(city, 'forecast');
-      setForecastData(data);
+      try {
+        const data = await fetchForecastData(city);
+        setForecastData(data);
+      } catch (error) {
+        console.error(error);
+      }
     };
     fetchForecast();
   }, [city]);
@@ -20,12 +23,12 @@ const Forecast = () => {
 
   return (
     <div>
-      <h2>7-Day Forecast for {city}</h2>
-      {forecastData.list.map((day, index) => (
+      <h2>Forecast for {city}</h2>
+      {forecastData.list.map((forecast, index) => (
         <div key={index}>
-          <p>Day {index + 1}: {day.weather[0].description}</p>
-          <p>High: {day.main.temp_max}°F</p>
-          <p>Low: {day.main.temp_min}°F</p>
+          <p>Date: {forecast.dt_txt}</p>
+          <p>Temperature: {forecast.main.temp}°C</p>
+          <p>Humidity: {forecast.main.humidity}%</p>
         </div>
       ))}
     </div>

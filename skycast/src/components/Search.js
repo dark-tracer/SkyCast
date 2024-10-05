@@ -1,5 +1,9 @@
 // src/components/Search.js
 import React, { useState } from 'react';
+import { fetchWeatherData } from '../api/weatherAPI';
+import CurrentWeather from './CurrentWeather';
+import Forecast from './Forecast';
+import Charts from './Charts';
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -26,4 +30,26 @@ const Search = () => {
           type="text"
           value={searchTerm}
           onChange={(event) => setSearchTerm(event.target.value)}
-         
+          placeholder="Enter city name"
+        />
+        <button type="submit">Search</button>
+      </form>
+      {error && (
+        <div>
+          <h2>Error</h2>
+          <p>{error}</p>
+        </div>
+      )}
+      {searchResults && (
+        <div>
+          <h2>Search Results for {searchTerm}</h2>
+          <CurrentWeather city={searchTerm} />
+          <Forecast city={searchTerm} />
+          <Charts city={searchTerm} />
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Search;
