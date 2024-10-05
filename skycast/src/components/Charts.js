@@ -21,6 +21,10 @@ const Charts = ({ city }) => {
     return <div>Loading...</div>;
   }
 
+  if (!chartData.list) {
+    return <div>No chart data available</div>;
+  }
+
   return (
     <div>
       <h2>Charts for {city}</h2>

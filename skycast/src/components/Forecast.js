@@ -21,6 +21,10 @@ const Forecast = ({ city }) => {
     return <div>Loading...</div>;
   }
 
+  if (!forecastData.list) {
+    return <div>No forecast data available</div>;
+  }
+
   return (
     <div>
       <h2>Forecast for {city}</h2>
