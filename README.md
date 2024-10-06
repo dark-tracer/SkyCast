@@ -21,6 +21,18 @@ A web application that displays real-time weather updates for a user's location 
 
 ### Clone the Repository
 
+## License
+
+This project is licensed under the MIT License.
+
+## Contributing
+Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request.
+
+## Acknowledgments
+OpenWeatherMap API for providing real-time weather data
+Chart.js for providing a charting library
+Mocky or JSON Server for providing a mock API tool
+
 ### Author
 * Bernie Amponsah
 
