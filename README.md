@@ -21,7 +21,8 @@ A web application that displays real-time weather updates for a user's location 
 
 ### Clone the Repository
 
+### Author
+* Bernie Amponsah
+
 ```bash
 git clone https://github.com/dark_tracer/weather-dashboard.git
-
-
