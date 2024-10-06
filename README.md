@@ -19,8 +19,6 @@ A web application that displays real-time weather updates for a user's location 
 
 ## Getting Started
 
-### Clone the Repository
-
 ## License
 
 This project is licensed under the MIT License.
@@ -35,6 +33,8 @@ Mocky or JSON Server for providing a mock API tool
 
 ### Author
 * Bernie Amponsah
+
+### Clone the Repository
 
 ```bash
 git clone https://github.com/dark_tracer/weather-dashboard.git
