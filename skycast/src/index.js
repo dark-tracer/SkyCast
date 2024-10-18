@@ -9,3 +9,6 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+// Update the document title and favicon
+document.title = 'SkyCast';
