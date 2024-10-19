@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div className="app">
       <header>
-        <h1>Weather Dashboard</h1>
+        <h1>SkyCast Dashboard</h1>
       </header>
       <main>
         <Search />
