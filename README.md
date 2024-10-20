@@ -31,13 +31,14 @@ OpenWeatherMap API for providing real-time weather data
 Chart.js for providing a charting library
 Mocky or JSON Server for providing a mock API tool
 
+### Clone the Repository
+
+```bash
+git clone https://github.com/dark_tracer/weather-dashboard.git
+```
+
 ### Author
 * Bernie Amponsah
 
 ### Deployment
 https://sky-cast-drab.vercel.app/
-
-### Clone the Repository
-
-```bash
-git clone https://github.com/dark_tracer/weather-dashboard.git
