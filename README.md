@@ -34,6 +34,9 @@ Mocky or JSON Server for providing a mock API tool
 ### Author
 * Bernie Amponsah
 
+### Deployment
+https://sky-cast-drab.vercel.app/
+
 ### Clone the Repository
 
 ```bash
