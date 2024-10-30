@@ -21,7 +21,7 @@ const CurrentWeather = () => {
   return (
     <div>
       <h2>Current Weather in {city}</h2>
-      <p>Temperature: {weatherData.main.temp}°F</p>
+      <p>Temperature: {weatherData.main.temp}</p>
       <p>Humidity: {weatherData.main.humidity}%</p>
       <p>Wind Speed: {weatherData.wind.speed} mph</p>
       <p>Weather Description: {weatherData.weather[0].description}</p>
